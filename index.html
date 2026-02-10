@@ -1,21 +1,216 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Privacy Policy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - LeafTab</title>
+    <style>
+        :root {
+            --primary-color: #34A853;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --link-color: #34A853;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-top: 25px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        p, ul {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .lang-switch {
+            background: none;
+            border: 1px solid #ddd;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .lang-switch:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-<h1>Privacy Policy</h1>
 
-<p>This extension respects your privacy and does not collect personal data.</p>
+<div class="container">
+    <header>
+        <h1 id="app-title">LeafTab Privacy Policy</h1>
+        <button class="lang-switch" onclick="toggleLanguage()">中文 / English</button>
+    </header>
 
-<p>Data stored by the extension is limited to user preferences, shortcuts, and settings required for the new tab functionality. This information is stored locally or synced through the user's browser account.</p>
+    <!-- English Content -->
+    <div id="content-en">
+        <p>Last Updated: February 2024</p>
+        
+        <p>LeafTab ("we", "us", or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our browser extension.</p>
 
-<p>Weather information and daily wallpapers are fetched from external services to provide updated content, but no personal information is transmitted.</p>
+        <h2>1. Data Collection and Usage</h2>
+        <p>We believe in data minimization. We only collect the data necessary to provide you with the functionality of the extension.</p>
+        <ul>
+            <li><strong>Local Data:</strong> Your shortcuts, background settings, and preferences are stored locally in your browser (using <code>localStorage</code> or <code>chrome.storage</code>).</li>
+            <li><strong>Cloud Sync (Optional):</strong> If you choose to log in, your shortcut groups will be encrypted and synchronized to our server (<code>leaftab.cc</code>) so you can access them across devices. We do not sell or share this data with third parties.</li>
+        </ul>
 
-<p>The extension does not sell, track, or share user data with third parties.</p>
+        <h2>2. Permissions</h2>
+        <p>LeafTab requires certain permissions to function correctly:</p>
+        <ul>
+            <li><strong>Storage:</strong> To save your settings and preferences locally.</li>
+            <li><strong>TopSites:</strong> To display your most frequently visited sites when you first install the extension (optional).</li>
+            <li><strong>Geolocation:</strong> Used solely to display local weather information. Your precise location is processed locally or sent to weather providers anonymously and is never stored on our servers.</li>
+        </ul>
 
-<p>Contact: mason.life@proton.me</p>
+        <h2>3. Third-Party Services</h2>
+        <p>To provide enhanced features, we may interact with the following third-party services:</p>
+        <ul>
+            <li><strong>Weather Providers:</strong> Open-Meteo, BigDataCloud, or Nominatim to fetch weather data based on your coordinates.</li>
+            <li><strong>Favicon Services:</strong> Google Favicon API, DuckDuckGo, or others to retrieve icons for your shortcuts.</li>
+        </ul>
+
+        <h2>4. Data Security</h2>
+        <p>We implement appropriate technical measures to protect your data. All communication between the extension and our sync server is encrypted using HTTPS.</p>
+
+        <h2>5. Contact Us</h2>
+        <p>If you have any questions or suggestions about this Privacy Policy, please contact us at:</p>
+        <p><strong>Email:</strong> <a href="mailto:mason.life@proton.me">mason.life@proton.me</a></p>
+    </div>
+
+    <!-- Chinese Content -->
+    <div id="content-zh" class="hidden">
+        <p>最后更新：2024年2月</p>
+        
+        <p>LeafTab（以下简称“我们”）非常重视您的隐私。本隐私政策旨在说明当您使用我们的浏览器扩展程序时，我们如何收集、使用和保护您的信息。</p>
+
+        <h2>1. 数据收集与使用</h2>
+        <p>我们遵循数据最小化原则。我们仅收集提供功能所必须的数据。</p>
+        <ul>
+            <li><strong>本地数据：</strong> 您的快捷方式、背景设置和偏好选项默认存储在您的浏览器本地（使用 <code>localStorage</code> 或 <code>chrome.storage</code>）。</li>
+            <li><strong>云端同步（可选）：</strong> 如果您选择登录账号，您的快捷方式分组将被加密并同步到我们的服务器 (<code>leaftab.cc</code>)，以便您在多台设备间同步数据。我们不会将此数据出售或共享给任何第三方。</li>
+        </ul>
+
+        <h2>2. 权限说明</h2>
+        <p>LeafTab 需要以下权限才能正常工作：</p>
+        <ul>
+            <li><strong>存储 (Storage)：</strong> 用于在本地保存您的设置和偏好。</li>
+            <li><strong>常用网站 (TopSites)：</strong> 仅用于在您初次安装时，自动为您列出最常访问的网站（可选）。</li>
+            <li><strong>地理位置 (Geolocation)：</strong> 仅用于显示当地天气信息。您的位置信息仅用于查询天气，不会被保存到我们的服务器。</li>
+        </ul>
+
+        <h2>3. 第三方服务</h2>
+        <p>为了提供更好的体验，我们可能会与以下第三方服务交互：</p>
+        <ul>
+            <li><strong>天气服务商：</strong> Open-Meteo, BigDataCloud 或 Nominatim（用于获取天气数据）。</li>
+            <li><strong>图标服务商：</strong> Google Favicon API, DuckDuckGo 等（用于获取网站图标）。</li>
+        </ul>
+
+        <h2>4. 数据安全</h2>
+        <p>我们采取适当的技术措施来保护您的数据安全。扩展程序与同步服务器之间的所有通信均使用 HTTPS 加密传输。</p>
+
+        <h2>5. 联系我们</h2>
+        <p>如果您对本隐私政策有任何疑问或建议，请通过以下方式联系我们：</p>
+        <p><strong>邮箱：</strong> <a href="mailto:mason.life@proton.me">mason.life@proton.me</a></p>
+    </div>
+
+    <footer>
+        &copy; 2024 LeafTab. All rights reserved.
+    </footer>
+</div>
+
+<script>
+    function toggleLanguage() {
+        const en = document.getElementById('content-en');
+        const zh = document.getElementById('content-zh');
+        const title = document.getElementById('app-title');
+        
+        if (en.classList.contains('hidden')) {
+            // Switch to English
+            en.classList.remove('hidden');
+            zh.classList.add('hidden');
+            title.textContent = 'LeafTab Privacy Policy';
+        } else {
+            // Switch to Chinese
+            en.classList.add('hidden');
+            zh.classList.remove('hidden');
+            title.textContent = 'LeafTab 隐私政策';
+        }
+    }
+
+    // Detect user language
+    window.onload = function() {
+        const userLang = navigator.language || navigator.userLanguage; 
+        if (userLang.startsWith('zh')) {
+            toggleLanguage(); // Switch to Chinese if detected
+        }
+    };
+</script>
 
 </body>
 </html>
